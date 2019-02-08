@@ -27,7 +27,7 @@ public class Executor {
     }
 
     public static void execute(String inputFile, DefaultHandler handler) {
-        try (InputStream input = new FileInputStream("src/test/resources/example.xml")) {
+        try (InputStream input = new FileInputStream(inputFile)) {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser parser = factory.newSAXParser();
             parser.parse(input, handler);
