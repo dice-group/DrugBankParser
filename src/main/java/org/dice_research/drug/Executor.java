@@ -14,7 +14,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class Executor {
 
-    public void execute(String inputFile, String outputFile, RDFCreatingHandler handler) {
+    public static void execute(String inputFile, String outputFile, RDFCreatingHandler handler) {
         try (FileOutputStream fout = new FileOutputStream(outputFile)) {
             StreamRDF outputStream = StreamRDFWriter.getWriterStream(fout, Lang.NTRIPLES);
             outputStream.start();
@@ -26,7 +26,7 @@ public class Executor {
         }
     }
 
-    public void execute(String inputFile, DefaultHandler handler) {
+    public static void execute(String inputFile, DefaultHandler handler) {
         try (InputStream input = new FileInputStream("src/test/resources/example.xml")) {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser parser = factory.newSAXParser();
