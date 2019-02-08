@@ -12,6 +12,7 @@ buildNumber.properties
 .classpath
 .project
 src/test/resources/example.xml
+src/test/resources/dataset.xml
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar

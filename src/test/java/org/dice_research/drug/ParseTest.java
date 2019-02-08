@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class ParseTest {
 
-    private static final String TEST_FILE = "src/test/resources/example.xml";
+    private static final String TEST_FILE = "src/test/resources/dataset.xml";
 
     private String getOutputFile(String name) {
         return "output/" + name;
@@ -28,5 +28,10 @@ public class ParseTest {
     @Test
     public void drugLabelHandler() throws Exception {
         Executor.execute(TEST_FILE, getOutputFile("labels.nt"), new DrugLabelHandler());
+    }
+
+    @Test
+    public void interactionHandler() throws Exception {
+        Executor.execute(TEST_FILE, getOutputFile("interactions.nt"), new InteractionHandler());
     }
 }

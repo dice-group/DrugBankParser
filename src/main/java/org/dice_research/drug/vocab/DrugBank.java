@@ -27,11 +27,14 @@ public class DrugBank {
 
     // Resources sorted alphabetically
     public static final Resource Drug = resource("Drug");
+    public static final Resource DrugInteraction = resource("DrugInteraction");
 
     // Properties sorted alphabetically
     public static final Property id = property("id");
     public static final Property indication = property("indication");
     public static final Property indicationDescription = property("indicationDescription");
+    public static final Property interactingDrug1 = property("interactingDrug1");
+    public static final Property interactingDrug2 = property("interactingDrug2");
 
     /**
      * returns the drug resource given its ID
@@ -42,4 +45,5 @@ public class DrugBank {
     public static Resource getDrug(String drugID) {
         return resource("drug-" + drugID);
     }
+
 }
