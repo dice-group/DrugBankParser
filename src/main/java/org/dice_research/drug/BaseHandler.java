@@ -25,9 +25,8 @@ public class BaseHandler extends DefaultHandler {
         if (level == 2 && qName.equals("drugbank-id")
         && attributes.getIndex("primary") != -1
         && attributes.getValue("primary").equals("true")) {
-            captureText(s -> currentDrugID = s);
+            captureText(this::setCurrentDrugID);
         }
-
     }
 
     public void endElement(String uri, String localName, String qName) {
@@ -42,6 +41,10 @@ public class BaseHandler extends DefaultHandler {
         }
 
         level--;
+    }
+    
+    private void setCurrentDrugID(String currentDrugID) {
+        this.currentDrugID = currentDrugID;
     }
 
     public void characters(char[] ch, int start, int length) throws SAXException {
