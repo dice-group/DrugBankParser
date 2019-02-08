@@ -16,6 +16,8 @@ public class BaseHandler extends DefaultHandler {
     private Consumer<String> captureTextConsumer = null;
     private StringBuilder textCaptureBuilder = new StringBuilder();
 
+    public void endDrug() {}
+
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         ++level;
 
@@ -37,6 +39,7 @@ public class BaseHandler extends DefaultHandler {
         }
 
         if (level == 1 && qName.equals("drug")) {
+            endDrug();
             currentDrugID = null;
         }
 
