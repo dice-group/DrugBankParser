@@ -29,7 +29,17 @@ public class DrugBank {
     public static final Resource Drug = resource("Drug");
 
     // Properties sorted alphabetically
+    public static final Property id = property("id");
     public static final Property indication = property("indication");
     public static final Property indicationDescription = property("indicationDescription");
 
+    /**
+     * returns the drug resource given its ID
+     *
+     * @param drugID the drug ID
+     * @return the resource
+     */
+    public static Resource getDrug(String drugID) {
+        return resource("drug-" + drugID);
+    }
 }
