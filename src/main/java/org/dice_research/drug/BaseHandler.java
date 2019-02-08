@@ -38,7 +38,6 @@ public class BaseHandler extends DefaultHandler {
         }
 
         if (level == 1 && qName.equals("drug")) {
-            LOGGER.info("Done with drug: {}", currentDrugID);
             currentDrugID = null;
         }
 
