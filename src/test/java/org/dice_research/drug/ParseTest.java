@@ -26,8 +26,13 @@ public class ParseTest {
     }
 
     @Test
+    public void drugResourceHandler() throws Exception {
+        Executor.execute(TEST_FILE, getOutputFile("drugs.nt"), new DrugResourceHandler());
+    }
+
+    @Test
     public void drugLabelHandler() throws Exception {
-        Executor.execute(TEST_FILE, getOutputFile("labels.nt"), new DrugLabelHandler());
+        Executor.execute(TEST_FILE, getOutputFile("drug-labels.nt"), new DrugLabelHandler());
     }
 
     @Test
