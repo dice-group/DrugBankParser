@@ -24,4 +24,10 @@ public class ParseTest {
         DefaultHandler handler = new BaseHandler();
         parser.parse(input, handler);
     }
+
+    @Test
+    public void assertHandler() throws Exception {
+        DefaultHandler handler = new AssertHandler();
+        parser.parse(input, handler);
+    }
 }
