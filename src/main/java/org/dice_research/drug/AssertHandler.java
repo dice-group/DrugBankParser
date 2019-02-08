@@ -10,6 +10,13 @@ public class AssertHandler extends BaseHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         super.startElement(uri, localName, qName, attributes);
 
+        if (level == 0) {
+            if (!qName.equals("drugbank")) {
+                LOGGER.error("Level 0 is not drugbank");
+                assert false;
+            }
+        }
+
         if (level == 1) {
             if (!qName.equals("drug")) {
                 LOGGER.error("Level 1 is not drug");
