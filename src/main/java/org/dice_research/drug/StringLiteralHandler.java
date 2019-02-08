@@ -23,6 +23,8 @@ public class StringLiteralHandler extends RDFCreatingHandler {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
+        super.startElement(uri, localName, qName, attributes);
+
         if (((tagLevel == null) || (tagLevel == level)) && qName.equals(tagName)) {
             captureText(this::setLiteralValue);
         }
