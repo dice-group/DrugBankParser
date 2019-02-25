@@ -33,9 +33,11 @@ public class StringLiteralHandler extends RDFCreatingHandler {
     private void setLiteralValue(String value) {
         this.literalValue = value;
     }
-    
+
     @Override
     public void endDrug() {
-        addTriple(DrugBank.getDrug(currentDrugID), property, ResourceFactory.createLangLiteral(literalValue, "en"));
+        if ((currentDrugID != null) && (literalValue != null) && (!literalValue.isEmpty())) {
+            addTriple(DrugBank.getDrug(currentDrugID), property, ResourceFactory.createLangLiteral(literalValue, "en"));
+        }
     }
 }

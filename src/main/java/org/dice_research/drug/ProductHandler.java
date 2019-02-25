@@ -157,6 +157,7 @@ public class ProductHandler extends RDFCreatingHandler {
                 LOGGER.error("Couldn't process triple " + s + ". It will be ignored.");
             }
         }
+        addTriple(DrugBank.getDrug(currentDrugID), DrugBank.product, finalProduct);
         product = null;
         productModel = null;
     }
